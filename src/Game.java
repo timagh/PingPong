@@ -155,7 +155,7 @@ public class Game extends JPanel implements Runnable {
             if (netInput.up) pad1.move(-1);
             if (netInput.down) pad1.move(1);
         }
-        //  System.out.println("net update");
+
     }
 
     //Обновление меню
