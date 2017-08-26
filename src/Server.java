@@ -53,7 +53,6 @@ public class Server implements Runnable {
 
         buffer2 = new byte[1024];
         String returnString = Integer.toString(NetInput.sMoveDir);
-        System.out.println(NetInput.sMoveDir);
         buffer2 = returnString.getBytes();
         if (buffer.equals(null)) {
             System.out.println("Sending no data");
