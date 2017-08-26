@@ -92,23 +92,23 @@ public class Game extends JPanel implements Runnable {
 
         if (menu.plNumb == 3) {
             if (input.space) ball.setSpeed(6);
-            if (input.w) pad1.move(-1);
-            if (input.s) pad1.move(1);
+            if (input.w && !input.s) pad1.move(-1);
+            if (input.s && !input.w) pad1.move(1);
             netUpdate();
         } else if (menu.plNumb == 1) {
             if (input.space) ball.setSpeed(6);
-            if (input.w) pad1.move(-1);
-            if (input.s) pad1.move(1);
+            if (input.w && !input.s) pad1.move(-1);
+            if (input.s && !input.w) pad1.move(1);
             paddleAI.move(ball.posY);
         } else if (menu.plNumb == 2) {
             if (input.space) ball.setSpeed(6);
-            if (input.w) pad1.move(-1);
-            if (input.s) pad1.move(1);
-            if (input.up) pad2.move(-1);
-            if (input.down) pad2.move(1);
+            if (input.w && !input.s) pad1.move(-1);
+            if (input.s && !input.w) pad1.move(1);
+            if (input.up && !input.down) pad2.move(-1);
+            if (input.down && !input.up) pad2.move(1);
         } else if (menu.plNumb == 4) {
-            if (input.up) pad2.move(-1);
-            if (input.down) pad2.move(1);
+            if (input.up && !input.down) pad2.move(-1);
+            if (input.down && !input.up) pad2.move(1);
             netUpdate();
         }
 

@@ -73,7 +73,7 @@ public class Client implements Runnable {
     public void run() {
 
         long lastTime = System.nanoTime();
-        final double ns = 1_000_000_000.0 / 30.0; // частота вызова update()
+        final double ns = 1_000_000_000.0 / 60.0; // частота вызова update()
         double delta = 0;
 
         while (running) {
