@@ -39,7 +39,7 @@ public class Server implements Runnable {
         packet = new DatagramPacket(buffer, buffer.length);
         try {
             socket.receive(packet);
-            System.out.println("Server has  received packet");
+            //System.out.println("Server has  received packet");
         } catch (IOException e) {
             System.out.println("Server Can't receive a packet : " + e.getMessage());
         }
@@ -53,6 +53,7 @@ public class Server implements Runnable {
 
         buffer2 = new byte[1024];
         String returnString = Integer.toString(NetInput.sMoveDir);
+        System.out.println(NetInput.sMoveDir);
         buffer2 = returnString.getBytes();
         if (buffer.equals(null)) {
             System.out.println("Sending no data");
@@ -63,7 +64,7 @@ public class Server implements Runnable {
         packet = new DatagramPacket(buffer2, buffer2.length, address, port);
         try {
             socket.send(packet);
-            System.out.println("Server has sent packet");
+           // System.out.println("Server has sent packet");
         } catch (IOException e) {
             System.out.println("Server Can't send a packet : " + e.getMessage());
         }
@@ -76,7 +77,7 @@ public class Server implements Runnable {
     public void run() {
 
         long lastTime = System.nanoTime();
-        final double ns = 1_000_000_000.0 / 60.0; // частота вызова update()
+        final double ns = 1_000_000_000.0 / 30.0; // частота вызова update()
         double delta = 0;
 
         while (running) {

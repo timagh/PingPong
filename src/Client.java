@@ -18,7 +18,7 @@ public class Client implements Runnable {
 
     public synchronized void start() {
         try {
-            address = InetAddress.getByName("188.227.212.66");  // getByName()
+            address = InetAddress.getByName("localhost");  // getByName()
             socket = new DatagramSocket();
         } catch (IOException e) {
             System.out.println("Client error: " + e.getMessage());
@@ -42,7 +42,7 @@ public class Client implements Runnable {
 
         try {
             socket.send(packet);
-            System.out.println("Client has send packet");
+            //System.out.println("Client has send packet");
         } catch (IOException e) {
             System.out.println("Client Can't sent a packet : " + e.getMessage());
         }
@@ -58,7 +58,7 @@ public class Client implements Runnable {
 
         try {
             socket.receive(packet);
-            System.out.println("Client has  received packet");
+           // System.out.println("Client has  received packet");
         } catch (IOException e) {
             System.out.println("Client Can't receive a packet : " + e.getMessage());
         }
@@ -73,7 +73,7 @@ public class Client implements Runnable {
     public void run() {
 
         long lastTime = System.nanoTime();
-        final double ns = 1_000_000_000.0 / 60.0; // частота вызова update()
+        final double ns = 1_000_000_000.0 / 30.0; // частота вызова update()
         double delta = 0;
 
         while (running) {

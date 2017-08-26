@@ -22,9 +22,9 @@ public class Input implements KeyListener {
         esc = keys[KeyEvent.VK_ESCAPE];
 
 
-        if (up || w) {
+        if ((up || w) && (!down && !s) ) {
             NetInput.sMoveDir = 1;
-        } else if (down || s) {
+        } else if ((down || s) && (!up && !w)) {
             NetInput.sMoveDir = -1;
         } else if (space) {
             NetInput.sMoveDir = 2;
